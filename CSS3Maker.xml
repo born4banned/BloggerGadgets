@@ -44,7 +44,7 @@ document.getElementById('borderradius').style.cssText=webkit+"<br/>"+moz+"<br/>"
 <br/>
 <input type='button' onclick='borderRadius()' value='Get CSS3 Border Radius Code'/><br/>
 <p>Preview:</p>
-<div id='borderradius' />
+<div id='borderradius'></div>
 <p>Your CSS3 Border Radius Code is:</p>
 <p id='code'></p>
   ]]>
