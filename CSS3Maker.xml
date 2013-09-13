@@ -35,16 +35,13 @@ document.getElementById('code').innerHTML=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+
 document.getElementById('borderradius').style.cssText=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+o+"<br/>"+simple;
 }
 </script>
-<div id='css3maker'>
 <input id='tLt' type='text' value='Radius Top Left'/><br/>
 <input id='tRt' type='text' value='Radius Top Right'/><br/>
 <input id='bLt' type='text' value='Radius Bottom Left'/><br/>
 <input id='bRt' type='text' value='Radius Bottom Right'/><br/>
-</div>
-<br/>
 <input type='button' onclick='borderRadius()' value='Get CSS3 Border Radius Code'/><br/>
 <p>Preview:</p>
-<div id='borderradius'></div>
+<div id='borderradius'></div><br/>
 <p>Your CSS3 Border Radius Code is:</p>
 <p id='code'></p>
   ]]>
