@@ -1,10 +1,10 @@
-<? xmlversion="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-<ModulePrefs title="__Up_title__" author="born4banned" />
-<UserPref name="title" display_name="Title of the Gadget" default_value="CSS3 Maker" />
-<Content type="html">
-<![CDATA[
-<p>Hello to __Up_title__.</p>
-]]>
-</Content>
+  <ModulePrefs title=" __UP_myname__" />
+  <UserPref name="myname" display_name="Name" required="true" />
+  <Content type="html">
+     <![CDATA[ 
+       Hello, world!
+     ]]>
+  </Content> 
 </Module>
