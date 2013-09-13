@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="Go to Photo Album" height="250" scaling="false" />
+  <ModulePrefs title="__Up_gadgetname_" title_url="http://www.born4banned.com/" author="born4banned" />
+  <UserPref name="gadgetname" display_name="Title" default_value="CSS3 Maker" />
   <Content type="html">
   <![CDATA[
-    <div style="text-align:center"><a
-      id="Riggs" title="My Photo Album" target="_blank"
-      href="http://picasaweb.google.com/doc.examples/ShelfBoy">
-      <img border="0" alt="Photo" src="http://doc.examples.googlepages.com/Riggsie-OP.jpg" 
-      title="Click Here."></a>
-    </div>
+    <style type="text/css">
+    table{width:100%;}
+td{width:50%;}
+#borderradius{margin: 0 auto; width:; height:; background-color:black;}
+</style>
+
+<script type='text/JavaScript'>
+function borderRadius(){
+tLt = document.getElementById('tLt').value;
+tRt = document.getElementById('tRt').value;
+bLt = document.getElementById('bLt').value;
+bRt = document.getElementById('bRt').value;
+values = new Array(tLt, tRt, bLt, bRt);
+for (i=0; i<4; i++){
+if (isNaN(values[i]) == true ){
+alert ("Please Enter A Number.");
+values[i] = 0;
+}
+else if (values[i] === '' || values[i] < 0){
+values[i] = 0;
+}
+else {
+values[i];
+}
+}
+webkit = "-webkit-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
+moz = "-moz-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
+ms = "-ms-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
+o = "-o-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
+simple = "border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
+document.getElementById('code').innerHTML=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+o+"<br/>"+simple;
+document.getElementById('borderradius').style.cssText=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+o+"<br/>"+simple;
+}
+</script>
+<table>
+<tr><td>
+<input id='tLt' type='text' value='Radius Top Left'/><br/>
+<input id='tRt' type='text' value='Radius Top Right'/><br/>
+<input id='bLt' type='text' value='Radius Bottom Left'/><br/>
+<input id='bRt' type='text' value='Radius Bottom Right'/><br/>
+</td><td>
+<div id='borderradius' />
+</td></tr>
+</table>
+<br/><br/>
+<input type='button' onclick='borderRadius()' value='Get CSS3 Border Radius Code'/><br/>
+<p>Your CSS3 Border Radius Code is:</p>
+<p id='code' />
   ]]>
   </Content>
 </Module>
