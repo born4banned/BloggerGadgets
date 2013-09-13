@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="__Up_gadgetname_" title_url="http://www.born4banned.com/" author="born4banned" />
-  <UserPref name="gadgetname" display_name="Title" />
+  <ModulePrefs title="CSS3Maker" title_url="http://www.born4banned.com/" author="born4banned" />
   <Content type="html">
   <![CDATA[
 <style type="text/css">
-#borderradius{margin: 0 auto; width:200px; height:100px; background-color:black;}
+#borderradius{margin: 0 auto; width:100px; height:100px; background-color:black;}
 </style>
 
 <script type='text/JavaScript'>
@@ -44,10 +43,10 @@ document.getElementById('borderradius').style.cssText=webkit+"<br/>"+moz+"<br/>"
 </div>
 <br/>
 <input type='button' onclick='borderRadius()' value='Get CSS3 Border Radius Code'/><br/>
-Preview:<br/>
+<p>Preview:</p>
 <div id='borderradius' />
-Your CSS3 Border Radius Code is:<br/>
-<span id='code'></span>
+<p>Your CSS3 Border Radius Code is:</p>
+<p id='code'></p>
   ]]>
   </Content>
 </Module>
