@@ -1,0 +1,8 @@
+<? xmlversion='1.0' encoding='UTF-8' ?>
+<Module>
+<ModulePrefs title='__Up_title__' author='born4banned' />
+<UserPref name='title' display_name='Title of the Gadget' default_value='CSS# Maker' />
+<Content type='html'><![CDATA[
+<p>Hello to __Up_title__.</p>
+]]></Content>
+</Module>
