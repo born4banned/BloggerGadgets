@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs title="__Up_gadgetname_" title_url="http://www.born4banned.com/" author="born4banned" />
-  <UserPref name="gadgetname" display_name="Title" default_value="CSS3 Maker" />
+  <UserPref name="gadgetname" display_name="Title" />
   <Content type="html">
   <![CDATA[
 <style type="text/css">
-#borderradius{margin: 0 auto; width:75%; background-color:black;}
+#borderradius{margin: 0 auto; width:200px; height:100px; background-color:black;}
 </style>
 
 <script type='text/JavaScript'>
