@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="" title_url="http://www.born4banned.com/" author="born4banned" />
+<UserPref name="backcl" display_name="Background Color" default_value="#ffffff" />
+<UserPref name="brdcl" display_name="Border Color" default_value="#ffffff" />
+<UserPref name="brdclhv" display_name="Border Color Hover" default_value="#ffffff" />
+<UserPref name="btncl" display_name="Button Color" default_value="#3c9ada" />
+<UserPref name="btnclhv" display_name="Button Color Hover" default_value="#3c9ada" />
+<UserPref name="fontcl" display_name="Font Color" default_value="#ffffff" />
+<UserPref name="fontclhv" display_name="Font Color Hover" default_value="#ffffff" />
+<UserPref name="firstpage" display_name="First Page Word" default_value="" />
+<UserPref name="lastpage" display_name="Last Page Word" default_value="" />
+<UserPref name="nextpage" display_name="Next Page Word" default_value="" />
+<UserPref name="prevpage" display_name="Previous Page Word" default_value="" />
+<UserPref name="pgdisplayed" display_name="No of Page Displayed" default_value="" datatype="int"/>
+<UserPref name="pgcount" display_name="Page Count" default_value="" /datatype="int">
+<Content type="html"><![CDATA[
+<script type='text/javascript'>
+var prefs = new gadgets.Prefs();
+var firstPage = prefs.getString("firstpage");
+var lastPage = prefs.getString("lastpage");
+var nextPage = prefs.getString("nextpage");
+var prevPage = prefs.getString("prevpage");
+var pageDisplay = prefs.getInteger("pgdisplayed");
+var pageCount = prefs.getInteger("pgcount");
+var backgroundColor = prefs.getString("backcl");
+var borderColor = prefs.getString("brdcl");
+var borderColorHover = prefs.getString("brdclhv");
+var buttonColor = prefs.getString("btncl");
+var buttonColorHover = prefs.getString("btnclhv");
+var fontColor = prefs.getString("fontcl");
+var fontColorHover = prefs.getString("fontclhv");
+document.getElementById('check').innerHTML= firsrPage + lastPage + nextPage; 
+</script>
+<div id='check'></div>
+]]></Content>
+</Module>
