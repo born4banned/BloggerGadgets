@@ -72,13 +72,6 @@ background-color: #FFFFFF;
 }
 </style>
 <script type="text/javascript">
-var prefs = new gadgets.Prefs();
-var pageCount=prefs.getInteger("pgcount");
-var displayPageNum=prefs.getInteger("pgdisplayed");
-var firstPageWord = prefs.getString("firstpage");
-var endPageWord = prefs.getString("lastpage");
-var upPageWord =prefs.getString("nextpage");
-var downPageWord =prefs.getString("prevpage");
 function showpageCount(json) {
 var thisUrl = location.href;
 var htmlMap = new Array();
@@ -95,6 +88,12 @@ var eFlag = 0;
 var html= '';
 var upPageHtml ='';
 var downPageHtml ='';
+var pageCount=__Up_pgcount__;
+var displayPageNum=__Up_pgdisplayed__;
+var firstPageWord = __Up_firstpage__;
+var endPageWord = __Up_lastpage__;
+var upPageWord =__Up_nextpage__;
+var downPageWord =__Up_prevpage__;
 var labelHtml = '<span class="showpageNum"><a href="/search/label/'+ thisLable +'?&max-results='+ pageCount +'">';
 for(var i=0, post; post = json.feed.entry[i]; i++) {
 var timestamp = post.published.$t.substr(0,10);
