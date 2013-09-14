@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="" title_url="http://www.born4banned.com/" author="born4banned" />
+<ModulePrefs title="Page Navigation" title_url="http://www.born4banned.com/" author="born4banned" />
 <UserPref name="backcl" display_name="Background Color" default_value="#ffffff" />
 <UserPref name="brdcl" display_name="Border Color" default_value="#ffffff" />
 <UserPref name="brdclhv" display_name="Border Color Hover" default_value="#ffffff" />
@@ -13,7 +13,7 @@
 <UserPref name="nextpage" display_name="Next Page Word" default_value="" />
 <UserPref name="prevpage" display_name="Previous Page Word" default_value="" />
 <UserPref name="pgdisplayed" display_name="No of Page Displayed" default_value="" datatype="int"/>
-<UserPref name="pgcount" display_name="Page Count" default_value="" /datatype="int">
+<UserPref name="pgcount" display_name="Page Count" default_value="" datatype="int" />
 <Content type="html"><![CDATA[
 <script type='text/javascript'>
 var prefs = new gadgets.Prefs();
