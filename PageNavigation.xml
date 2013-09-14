@@ -30,7 +30,7 @@ var buttonColor = prefs.getString("btncl");
 var buttonColorHover = prefs.getString("btnclhv");
 var fontColor = prefs.getString("fontcl");
 var fontColorHover = prefs.getString("fontclhv");
-document.getElementById('check').innerHTML= firsrPage + lastPage + nextPage; 
+document.getElementById('check').innerHTML="" + firsrPage + lastPage + nextPage; 
 </script>
 <div id='check'></div>
 ]]></Content>
