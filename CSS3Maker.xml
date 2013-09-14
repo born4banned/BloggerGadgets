@@ -1,49 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="CSS3Maker" title_url="http://www.born4banned.com/" author="born4banned" />
-  <Content type="html">
-  <![CDATA[
-<style type="text/css">
-#borderradius{margin: 0 auto; width:100px; height:100px; background-color:black;}
-</style>
+  <ModulePrefs title="Preferences for __UP_myname__" height="400"/>
+  <UserPref name="myname" display_name="Name" default_value="Rowan"/>
+  <UserPref name="myphoto" display_name="Photo" default_value="http://doc.examples.googlepages.com/rowan-headshot.jpg"/>
+  <UserPref name="mychoice" display_name="Show Photo?" datatype="bool" default_value="true"/>
+  <UserPref name="mycolor" display_name="Color" default_value="Yellow" datatype="enum" >
+    <EnumValue value="Red" />
+     <EnumValue value="Aqua" />
+     <EnumValue value="Lime" />
+     <EnumValue value="Yellow" />
+     <EnumValue value="Pink" />
+     <EnumValue value="Orange" />
+     <EnumValue value="White" />
+   </UserPref>
+   <Content type="html"><![CDATA[
+   <div id="content_div"></div>
+   <script type="text/javascript">
+   // Get userprefs
+   var prefs = new gadgets.Prefs();
 
-<script type='text/JavaScript'>
-function borderRadius(){
-tLt = document.getElementById('tLt').value;
-tRt = document.getElementById('tRt').value;
-bLt = document.getElementById('bLt').value;
-bRt = document.getElementById('bRt').value;
-values = new Array(tLt, tRt, bLt, bRt);
-for (i=0; i<4; i++){
-if (isNaN(values[i]) == true ){
-alert ("Please Enter A Number.");
-values[i] = 0;
-}
-else if (values[i] === '' || values[i] < 0){
-values[i] = 0;
-}
-else {
-values[i];
-}
-}
-webkit = "-webkit-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
-moz = "-moz-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
-ms = "-ms-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
-o = "-o-border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
-simple = "border-radius: " + values[0] + "px" + " " + values[1] + "px" + " " + values[3] + "px" + " " + values[2] + "px;";
-document.getElementById('code').innerHTML=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+o+"<br/>"+simple;
-document.getElementById('borderradius').style.cssText=webkit+"<br/>"+moz+"<br/>"+ms+"<br/>"+o+"<br/>"+simple;
-}
-</script>
-<input id='tLt' type='text' value='Radius Top Left'/><br/>
-<input id='tRt' type='text' value='Radius Top Right'/><br/>
-<input id='bLt' type='text' value='Radius Bottom Left'/><br/>
-<input id='bRt' type='text' value='Radius Bottom Right'/><br/>
-<input type='button' onclick='borderRadius()' value='Get CSS3 Border Radius Code'/><br/>
-<p>Preview:</p>
-<div id='borderradius'></div><br/>
-<p>Your CSS3 Border Radius Code is:</p>
-<p id='code'></p>
-  ]]>
+   function displayGreeting () {
+     // Get current time
+     var today = new Date();
+     var time = today.getTime();
+     var html = "";
+
+     // Based on the time of day, display an appropriate greeting
+     var hour = today.getHours();
+     var salutation = "Afternoon";
+     if (hour < 12) {
+       salutation = "Morning";
+     } else if (hour > 17) {
+       salutation = "Evening";
+     }
+
+     // Set the background color according to the mycolor userpref
+     var element = document.getElementById('content_div');
+     element.style.height=250;
+     // Set the background color according to the mycolor userpref
+     element.style.backgroundColor=prefs.getString("mycolor");
+
+     // Display a greeting based on the myname userpref
+     html += "<br><FONT SIZE=6>Good " + salutation + ", " +
+           prefs.getString("myname") + "!!!<br><br></FONT>";
+
+     // If the "Show Photo?" checkbox is checked, display photo.
+     if (prefs.getBool("mychoice") == true) {
+       html += '<img src="' + prefs.getString("myphoto") + '">';
+     }
+     element.innerHTML = html;
+   }
+   // Pass the userprefs for this module instance to the function
+   // (allows users to include multiple module instances on their page)
+   gadgets.util.registerOnLoadHandler(displayGreeting);
+
+   </script>
+   ]]>
   </Content>
 </Module>
