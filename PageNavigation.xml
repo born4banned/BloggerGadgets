@@ -16,70 +16,66 @@
 <UserPref name="pgcount" display_name="Page Count" default_value="" datatype="int" />
 <Content type="html"><![CDATA[
 <style>
-.showpageArea {padding: 0 5px;
-margin-top: 10px;
-margin-bottom: 10px;
+.showpageArea {text-align: center;
+padding:5px;
+background-color:#fff;
+-moz-box-shadow: 3px 3px 5px #ccc;
+-webkit-box-shadow: 3px 3px 5px #ccc;
+box-shadow: 3px 3px 5px #ccc;
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#ccc')";
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#ccc');
 }
-.showpageArea a {border: 1px solid #505050;
-color: #000000;
-font-weight: normal;
-padding: 3px 6px !important;
-margin: 0px 4px;
+.showpageArea a {
 text-decoration: none;
+font-size:16px;
 }
-.showpageArea a:hover {font-size: 11px;
-border: 1px solid #333;
-color: #000000;
-background-color: #FFFFFF;
-}
-.showpageNum a {border: 1px solid #505050;
-color: #000000;
-font-weight: normal;
-padding: 3px 6px !important;
-margin: 0px 4px;
-text-decoration: none;
-}
-.showpageNum a:hover {font-size: 11px;
-border: 1px solid #333;
-color: #000000;
-background-color: #FFFFFF;
-}
-.showpagePoint {font-size: 11px;
-padding: 2px 4px 2px 4px;
-margin: 2px;
+.showpageArea a:hover {
 font-weight: bold;
-border: 1px solid #333;
-color: #fff;
-background-color: #000000;
+font-size:18px;
 }
-.showpage a:hover {font-size: 11px;
-border: 1px solid #333;
-color: #000000;
-background-color: #FFFFFF;
-}
-.showpageNum a:link,.showpage a:link {font-size: 11px;
-padding: 2px 4px 2px 4px;
-margin: 2px;
+.showpageNum a, .showpagePoint {
+color:#fff;
+padding:3px !important;
 text-decoration: none;
-border: 1px solid #0066cc;
-color: #0066cc;
-background-color: #FFFFFF;
+background: #2989d8; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTU3OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #2989d8 1%, #1e5799 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2989d8), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #2989d8 1%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #2989d8 1%,#1e5799 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #2989d8 1%,#1e5799 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #2989d8 1%,#1e5799 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#1e5799',GradientType=0 ); /* IE6-8 */
+
+border:2px solid #fff;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
+-moz-box-shadow: 1px 1px 3px #ccc;
+-webkit-box-shadow: 1px 1px 3px #ccc;
+box-shadow: 1px 1px 3px #ccc;
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#ccc')";
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#ccc');
 }
-.showpageNum a:hover {font-size: 11px;
-border: 1px solid #333;
-color: #000000;
-background-color: #FFFFFF;
+.showpageNum a:hover, .showpage a:hover {
+font-weight: bold;
+}
+.showpageNum a:link,.showpage a:link {
+margin-left:3px;
+text-decoration: none;
 }
 </style>
 <script type="text/javascript">
 function showpageCount(json) {
 var thisUrl = location.href;
 var htmlMap = new Array();
-var isFirstPage = thisUrl.substring(thisUrl.length-14,thisUrl.length) == ".blogspot.com/";
-var isLablePage = thisUrl.indexOf("/search/label/") != -1;
-var isPage = thisUrl.indexOf("/search?updated") != -1;
-var thisLable = isLablePage ? thisUrl.substr(thisUrl.indexOf("/search/label/")+ 14,thisUrl.length) : "";
-thisLable = thisLable.indexOf("?") != -1 ? thisLable.substr(0,thisLable.indexOf("?")) : thisLable;
+var isFirstPage = thisUrl.substring(thisUrl.length-14,thisUrl.length)==".blogspot.com/";
+var isLablePage = thisUrl.indexOf("/search/label/")!=-1;
+var isPage = thisUrl.indexOf("/search?updated")!=-1;
+var thisLable = isLablePage ? thisUrl.substr(thisUrl.indexOf("/search/label/")+14,thisUrl.length) : "";
+thisLable = thisLable.indexOf("?")!=-1 ? thisLable.substr(0,thisLable.indexOf("?")) : thisLable;
 var thisNum = 1;
 var postNum=1;
 var itemCount = 0;
@@ -88,27 +84,25 @@ var eFlag = 0;
 var html= '';
 var upPageHtml ='';
 var downPageHtml ='';
-var pageCount=__Up_pgcount__;
-var displayPageNum=__Up_pgdisplayed__;
-var firstPageWord = __Up_firstpage__;
-var endPageWord = __Up_lastpage__;
-var upPageWord =__Up_nextpage__;
-var downPageWord =__Up_prevpage__;
-var labelHtml = '<span class="showpageNum"><a href="/search/label/'+ thisLable +'?&max-results='+ pageCount +'">';
+var pageCount=4;
+var displayPageNum=5;
+var upPageWord ='<';
+var downPageWord ='>';
+var labelHtml = '<span class="showpageNum"><a href="/search/label/'+thisLable+'?&max-results='+pageCount+'">';
 for(var i=0, post; post = json.feed.entry[i]; i++) {
 var timestamp = post.published.$t.substr(0,10);
 var title = post.title.$t;
 if(isLablePage){
-if(title! = ''){
+if(title!=''){
 if(post.category){
-for(var c = 0, post_category; post_category = post.category[c]; c++) {
-if(encodeURIComponent(post_category.term) == thisLable){
-if(itemCount == 0 || (itemCount % pageCount == (pageCount-1))){
+for(var c=0, post_category; post_category = post.category[c]; c++) {
+if(encodeURIComponent(post_category.term)==thisLable){
+if(itemCount==0 || (itemCount % pageCount ==(pageCount-1))){
 if(thisUrl.indexOf(timestamp)!=-1 ){
 thisNum = postNum;
 }
 postNum++;
-htmlMap[htmlMap.length] = '/search/label/' + thisLable + '?updated-max=' + timestamp + 'T00%3A00%3A00%2B08%3A00&max-results=' + pageCount;
+htmlMap[htmlMap.length] = '/search/label/'+thisLable+'?updated-max='+timestamp+'T00%3A00%3A00%2B08%3A00&max-results='+pageCount;
 }
 }
 }
@@ -116,64 +110,63 @@ htmlMap[htmlMap.length] = '/search/label/' + thisLable + '?updated-max=' + times
 itemCount++;
 }
 }else{
-if(title != ''){
-if(itemCount == 0 || (itemCount % pageCount == (pageCount-1))){
-if(thisUrl.indexOf(timestamp) != -1 ){
+if(title!=''){
+if(itemCount==0 || (itemCount % pageCount ==(pageCount-1))){
+if(thisUrl.indexOf(timestamp)!=-1 ){
 thisNum = postNum;
 }
-if(title != '') postNum++;
-htmlMap[htmlMap.length] = '/search?updated-max=' + timestamp + 'T00%3A00%3A00%2B08%3A00&max-results=' + pageCount;
+if(title!='') postNum++;
+htmlMap[htmlMap.length] = '/search?updated-max='+timestamp+'T00%3A00%3A00%2B08%3A00&max-results='+pageCount;
 }
 }
 itemCount++;
 }
 }
-for(var p = 0; p < htmlMap.length; p++){
-if(p >= (thisNum-displayPageNum-1) && p < (thisNum+displayPageNum)){
-if(fFlag == 0 && p == thisNum-2){
-if(thisNum == 2){
+for(var p =0;p< htmlMap.length;p++){
+if(p>=(thisNum-displayPageNum-1) && p<(thisNum+displayPageNum)){
+if(fFlag ==0 && p == thisNum-2){
+if(thisNum==2){
 if(isLablePage){
-upPageHtml = labelHtml + upPageWord + '</a></span>';
+upPageHtml = labelHtml +' <img style="margin-bottom:-11px;" height="32px" src="https://lh6.googleusercontent.com/-KJLZg_vEBqE/UPBEhz3-4oI/AAAAAAAAANw/0vS6O1H5lHg/s48/back.png" width="32px"></a></span>';
 }else{
-upPageHtml = '<span class="showpage"><a href="/">' + upPageWord + '</a></span>';
+upPageHtml = '<span class="showpage"><a href="/"><img style="margin-bottom:-11px;" height="32px" src="https://lh6.googleusercontent.com/-KJLZg_vEBqE/UPBEhz3-4oI/AAAAAAAAANw/0vS6O1H5lHg/s48/back.png" width="32px"></a></span>';
 }
 }else{
-upPageHtml = '<span class="showpage"><a href="' + htmlMap[p] + '">' + upPageWord + '</a></span>';
+upPageHtml = '<span class="showpage"><a href="'+htmlMap[p]+'"><img style="margin-bottom:-11px;" height="32px" src="https://lh6.googleusercontent.com/-KJLZg_vEBqE/UPBEhz3-4oI/AAAAAAAAANw/0vS6O1H5lHg/s48/back.png" width="32px"></a></span>';
 }
 fFlag++;
 }
-if(p == (thisNum-1)){
-html += ' <span class="showpagePoint"><u>' + thisNum + '</u></span>';
+if(p==(thisNum-1)){
+html += ' <span class="showpagePoint">'+thisNum+'</span>';
 }else{
-if(p == 0){
+if(p==0){
 if(isLablePage){
-html = labelHtml +'1</a></span>';
+html = labelHtml+'1</a></span>';
 }else{
 html += '<span class="showpageNum"><a href="/">1</a></span>';
 }
 }else{
-html += '<span class="showpageNum"><a href="' + htmlMap[p] + '">' + (p+1) + ' </a></span>';
+html += '<span class="showpageNum"><a href="'+htmlMap[p]+'">'+ (p+1) +'</a></span>';
 }
 }
-if(eFlag == 0 && p == thisNum){
-downPageHtml = '<span class="showpage"><a href="' + htmlMap[p] + '">' + downPageWord + '</a></span>';
+if(eFlag ==0 && p == thisNum){
+downPageHtml = '<span class="showpage"> <a href="'+htmlMap[p]+'"><img style="margin-bottom:-11px;" height="32px" src="https://lh6.googleusercontent.com/-QGkr1X8Wfp8/UPBEiO9Zy7I/AAAAAAAAAN0/TGPnuRp0Kpk/s48/next.png" width="32px"></a></span>';
 eFlag++;
 }
-}//end if(p >= (thisNum-displayPageNum-1) && p<(thisNum+displayPageNum)){
-}//end for(var p = 0; p < htmlMap.length; p++){
-if(thisNum > 1){
+}//end if(p>=(thisNum-displayPageNum-1) && p<(thisNum+displayPageNum)){
+}//end for(var p =0;p< htmlMap.length;p++){
+if(thisNum>1){
 if(!isLablePage){
-html = '<span class="showpage"><a href="/">' + firstPageWord + ' </a></span>' + upPageHtml + ' ' + html + ' ';
+html = upPageHtml+' '+html +' ';
 }else{
-html = '' + labelHtml + firstPageWord + ' </a></span>' + upPageHtml + ' ' + html + ' ';
+html = ''+labelHtml +' </a></span>'+upPageHtml+' '+html +' ';
 }
 }
-html = '<div class="showpageArea">' + html;
-if(thisNum < (postNum-1)){
+html = '<div class="showpageArea">'+html;
+if(thisNum<(postNum-1)){
 html += downPageHtml;
-html += '<span class="showpage"><a href="' + htmlMap[htmlMap.length-1] + '"> '+ endPageWord + '</a></span>';
 }
-if(postNum == 1) postNum++;
+if(postNum==1) postNum++;
 html += '</div>';
 if(isPage || isFirstPage || isLablePage){
 var pageArea = document.getElementsByName("pageArea");
@@ -181,10 +174,10 @@ var blogPager = document.getElementById("blog-pager");
 if(postNum <= 2){
 html ='';
 }
-for(var p = 0; p < pageArea.length; p++){
+for(var p =0;p< pageArea.length;p++){
 pageArea[p].innerHTML = html;
 }
-if(pageArea && pageArea.length > 0){
+if(pageArea&&pageArea.length>0){
 html ='';
 }
 if(blogPager){
@@ -194,6 +187,6 @@ blogPager.innerHTML = html;
 }
 </script>
 <script src="/feeds/posts/summary?alt=json-in-script&callback=showpageCount&max-results=99999" type="text/javascript"></script>
-<div style="display:none;"> </div>
+<div style="display:none; position:relative"> </div>
 ]]></Content>
 </Module>
